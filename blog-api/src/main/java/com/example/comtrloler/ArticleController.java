@@ -24,7 +24,7 @@ public class ArticleController {
      * @return
      */
     @PostMapping("All")
-
+    @LogAnnotation(module = "文章",operator = "查询所有文章")
     //自写注解，记录日志，aop日志
     public Result article(@RequestBody PageParams params){
 
@@ -36,6 +36,7 @@ public class ArticleController {
      * @return
      */
     @PostMapping("hot")
+    @LogAnnotation(module = "文章",operator = "最热文章")
     public Result hotArticle(){
         return service.hotArticle();
     }
@@ -45,6 +46,7 @@ public class ArticleController {
      * @return
      */
     @PostMapping("new")
+    @LogAnnotation(module = "文章",operator = "最新标签")
     public Result newArticles(){
         return service.newArticles();
     }
@@ -54,6 +56,7 @@ public class ArticleController {
      * @return
      */
     @PostMapping("listArchives")
+    @LogAnnotation(module = "文章",operator = "文章归纳")
     public Result listArchives(){
         return service.listArchives();
     }
@@ -62,6 +65,7 @@ public class ArticleController {
      * 文章详情
      */
     @PostMapping("view/{id}")
+    @LogAnnotation(module = "文章",operator = "文章详情")
     public Result findArticle(@PathVariable("id") Long id){
         return service.findArticleById(id);
     }
@@ -69,6 +73,7 @@ public class ArticleController {
      * 写文章
      */
     @PostMapping("publish")
+    @LogAnnotation(module = "文章",operator = "发布文章")
     public Result publish(@RequestBody ArticleParam articleParam){
         return service.publish(articleParam);
     }

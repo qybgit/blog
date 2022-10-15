@@ -9,6 +9,7 @@ import com.example.service.SysUserService;
 import com.example.util.JwtUtil;
 import com.example.vo.ErrorCode;
 import com.example.vo.Result;
+import com.example.vo.TokenVo;
 import com.example.vo.params.LoginPagParams;
 import io.jsonwebtoken.Jwt;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -49,7 +50,8 @@ public class LoginServiceimpl implements LoginService {
         if(sysUser!=null){
             String token=JwtUtil.createToken(sysUser.getId());
             template.opsForValue().set("Token_"+token, JSON.toJSONString(sysUser));
-            return Result.success(token);
+            TokenVo tokenVo=new TokenVo(token,sysUser.getAccount());
+            return Result.success(tokenVo);
 
         }
         return Result.fail(000,"找不到");

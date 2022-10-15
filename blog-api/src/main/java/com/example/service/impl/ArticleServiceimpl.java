@@ -38,7 +38,6 @@ public class ArticleServiceimpl implements ArticleService {
     CategoryService categoryService;
     @Resource
     RedisTemplate<String,String> template;
-    @LogAnnotation(module = "所有文章",operator = "all")
     @Override
     public Result listArticle(PageParams params) {
 
