@@ -110,4 +110,11 @@ public interface ArticleMapper {
      */
     @Select("select * from ms_article where author_id=#{id}")
     List<Article> findUserArticle(Long id);
+
+    /**
+     * 查找文章数量
+     * @return
+     */
+    @Select("select count(*) from ms_article ")
+    Long findCount();
 }

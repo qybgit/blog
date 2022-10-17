@@ -81,7 +81,16 @@ public class ArticleController {
      * 根据用户id查找文章
      */
     @PostMapping("userArticle")
-    public Result userArticle( Long id){
+    @LogAnnotation(module = "文章",operator = "用户所有文章")
+    public Result userArticle(){
         return service.findUserArticle();
+    }
+    /**
+     * 文章数量
+     */
+    @GetMapping("count")
+    @LogAnnotation(module = "文章",operator = "文章数量")
+    public Result count(){
+        return service.findCount();
     }
 }

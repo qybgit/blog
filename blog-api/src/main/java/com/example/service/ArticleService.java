@@ -18,4 +18,6 @@ public interface ArticleService {
     Result publish(ArticleParam articleParam);
 
     Result findUserArticle();
+
+    Result findCount();
 }

@@ -163,12 +163,26 @@ public class ArticleServiceimpl implements ArticleService {
         return Result.success(article.getId());
     }
 
+    /**
+     * 用户所有文章
+     * @return
+     */
     @Override
     public Result findUserArticle() {
         SysUser sysUser=UserThreadLocal.get();
         List<Article> articleList=mapper.findUserArticle(sysUser.getId());
         List<ArticleVo> articleVoList=copyArticleList(articleList,true,true,true,true);
         return Result.success(articleVoList);
+    }
+
+    /**
+     * 文章数量
+     * @return
+     */
+    @Override
+    public Result findCount() {
+        Long count=mapper.findCount();
+        return Result.success(count);
     }
 
     private List<ArticleVo> copyArticleList(List<Article> list,boolean isTag,boolean isAuthor) {
