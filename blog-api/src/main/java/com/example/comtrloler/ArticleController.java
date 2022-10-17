@@ -77,4 +77,11 @@ public class ArticleController {
     public Result publish(@RequestBody ArticleParam articleParam){
         return service.publish(articleParam);
     }
+    /**
+     * 根据用户id查找文章
+     */
+    @PostMapping("userArticle")
+    public Result userArticle( Long id){
+        return service.findUserArticle();
+    }
 }

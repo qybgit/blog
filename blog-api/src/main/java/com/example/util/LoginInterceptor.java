@@ -30,7 +30,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         log.info("token:{}", token);
         log.info("=================request end===========================");
         if (StringUtils.isBlank(token)){
-            Result result=new Result(false,500,"token错误",null);
+            Result result=new Result(false,500,"token错误,请登陆",null);
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().print(JSON.toJSON(result));
             return false;

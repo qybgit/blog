@@ -16,4 +16,6 @@ public interface ArticleService {
     Result findArticleById(Long id);
 
     Result publish(ArticleParam articleParam);
+
+    Result findUserArticle();
 }

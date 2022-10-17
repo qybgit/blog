@@ -23,7 +23,8 @@ registry.addMapping("/**")//允许跨域请求地址
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor)
                 .addPathPatterns("/comments/create/change")//拦截路径
-                .addPathPatterns("/article/publish");//拦截写路径
+                .addPathPatterns("/article/publish")
+                .addPathPatterns("/article/userArticle");//拦截写路径
         WebMvcConfigurer.super.addInterceptors(registry);
     }
 }

@@ -104,4 +104,10 @@ public interface ArticleMapper {
             " where id=#{id} ")
     int updateArticle(Article article);
 
+    /**
+     * 根据作者id查找文章
+     * @return
+     */
+    @Select("select * from ms_article where author_id=#{id}")
+    List<Article> findUserArticle(Long id);
 }

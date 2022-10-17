@@ -163,6 +163,14 @@ public class ArticleServiceimpl implements ArticleService {
         return Result.success(article.getId());
     }
 
+    @Override
+    public Result findUserArticle() {
+        SysUser sysUser=UserThreadLocal.get();
+        List<Article> articleList=mapper.findUserArticle(sysUser.getId());
+        List<ArticleVo> articleVoList=copyArticleList(articleList,true,true,true,true);
+        return Result.success(articleVoList);
+    }
+
     private List<ArticleVo> copyArticleList(List<Article> list,boolean isTag,boolean isAuthor) {
         List<ArticleVo> articleVoList=new ArrayList<>();
         for (Article article : list) {
@@ -203,7 +211,7 @@ public class ArticleServiceimpl implements ArticleService {
          * 加载文章类容
          */
         if (isBody){
-            ArticleBodyVo articleBodyVo=findArticleBody(article.getId());
+            ArticleBodyVo articleBodyVo=findArticleBody(article.getBody_Id());
             articleVo.setBody(articleBodyVo);
         }
         /**
@@ -218,6 +226,7 @@ public class ArticleServiceimpl implements ArticleService {
     }
 
     private ArticleBodyVo findArticleBody(Long id) {
+        System.out.println(id);
         ArticleBody articleBody=mapper.findArticleBody(id);
         ArticleBodyVo articleBodyVo=new ArticleBodyVo();
         articleBodyVo.setContent(articleBody.getContent());
