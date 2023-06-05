@@ -1,4 +1,4 @@
-package com.example.comtrloler;
+package com.example.controller;
 
 import com.example.vo.Result;
 import org.springframework.web.bind.annotation.PathVariable;

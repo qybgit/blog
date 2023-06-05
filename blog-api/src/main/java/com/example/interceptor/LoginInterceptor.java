@@ -1,8 +1,9 @@
-package com.example.util;
+package com.example.interceptor;
 
 import com.alibaba.fastjson2.JSON;
 import com.example.dao.popj.SysUser;
 import com.example.service.LoginService;
+import com.example.util.UserThreadLocal;
 import com.example.vo.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;

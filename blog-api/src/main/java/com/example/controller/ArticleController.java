@@ -1,4 +1,4 @@
-package com.example.comtrloler;
+package com.example.controller;
 import com.example.common.app.LogAnnotation;
 import com.example.service.impl.ArticleServiceimpl;
 import com.example.vo.Result;

@@ -1,4 +1,4 @@
-package com.example.comtrloler;
+package com.example.controller;
 
 import com.example.service.LoginService;
 import com.example.vo.Result;

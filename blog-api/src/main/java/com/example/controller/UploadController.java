@@ -1,4 +1,4 @@
-package com.example.comtrloler;
+package com.example.controller;
 
 import com.example.util.QiniuUtil;
 import com.example.vo.Result;

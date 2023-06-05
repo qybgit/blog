@@ -73,6 +73,13 @@ LoginService loginService;
     @Test
 
     void test1(){
-        System.out.println("srg");
+
+        String s1="a";
+        String s2="b";
+        String s3=new String("a") +new String("b");
+        String s4="ab";
+        String s5=s1+s2;
+        System.out.println(s3==s4);
+        System.out.println(s5==s4);
     }
 }

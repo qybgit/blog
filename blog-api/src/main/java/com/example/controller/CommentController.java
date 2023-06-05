@@ -1,4 +1,4 @@
-package com.example.comtrloler;
+package com.example.controller;
 
 import com.example.service.CommentService;
 import com.example.vo.Result;

@@ -1,8 +1,7 @@
-package com.example.comtrloler;
+package com.example.controller;
 
 import com.example.service.impl.TagServiceimpl;
 import com.example.vo.Result;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
